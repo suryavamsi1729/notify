@@ -87,27 +87,36 @@ export default function ExampleComponent() {
 
 ### 🎨 Customization
 
-#### Notification Types
+#### Notification Types  
 
-  Type      Description           
- ---------------------------------
- `info`     General information  
- ---------------------------------
- `success`  Operation successful 
- ---------------------------------
- `warning`  Caution alert        
- ---------------------------------
- `error`    Error alert          
+<table style="border-collapse: collapse; width: 100%;">
+  <!-- Header -->
+  <thead>
+    <tr style="border-bottom: 3px solid #000;"> <!-- thick line under header -->
+      <th style="text-align: left; padding: 8px;">Type</th>
+      <th style="text-align: left; padding: 8px;">Description</th>
+    </tr>
+  </thead>
 
-<table>
-  <tr>
-    <th>Type</th>
-    <th>Description</th>
-  </tr>
-  <tr><td>info</td><td>General information</td></tr>
-  <tr><td>success</td><td>Operation successful</td></tr>
-  <tr><td>warning</td><td>Caution alert</td></tr>
-  <tr><td>error</td><td>Error alert</td></tr>
+  <!-- Body -->
+  <tbody>
+    <tr style="border-bottom: 1px solid #ccc;"> <!-- thin line -->
+      <td style="padding: 8px;">info</td>
+      <td style="padding: 8px;">General information</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 8px;">success</td>
+      <td style="padding: 8px;">Operation successful</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 8px;">warning</td>
+      <td style="padding: 8px;">Caution alert</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">error</td>
+      <td style="padding: 8px;">Error alert</td>
+    </tr>
+  </tbody>
 </table>
 
 
