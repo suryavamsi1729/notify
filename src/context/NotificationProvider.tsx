@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState, type FC, type ReactNode } from "react";
-import Notification from "../components/Notification";
+import {Notification} from "../components/Notification";
 import type { NotificationData, NotificationProps, NotificationType, Position,Animation, Sound } from "../types";
 import NotificationContext from "./NotificationContext";
 import { v4 as uuidv4 } from 'uuid';
@@ -19,7 +19,7 @@ const DEFAULT_OPTIONS = {
   sound: "off" as Sound,
 };
 
-const NotificationProvider:FC<NotificationProviderProps> = ({children}) => {
+export const NotificationProvider:FC<NotificationProviderProps> = ({children}) => {
   const [notifications, setNotifications] = useState<NotificationItem[] >([]);
 
   const len = notifications.length;
@@ -32,8 +32,8 @@ const NotificationProvider:FC<NotificationProviderProps> = ({children}) => {
     const id = uuidv4();
     const { position, animation, duration, sound } = { ...DEFAULT_OPTIONS, ...options };
     if(sound=="on"){
-        const audio = new Audio("/sounds/notification.mp3");
-        audio.volume = 0.75;
+        const audio = new Audio(new URL("../assets/sounds/notification.mp3", import.meta.url).href);
+        audio.volume = 1;
         audio.play().catch(() => {});
     }
     const close = () => setNotifications((prev) => prev.filter((n) => n.id !== id));
@@ -70,4 +70,3 @@ const NotificationProvider:FC<NotificationProviderProps> = ({children}) => {
 };
 
 
-export default NotificationProvider;

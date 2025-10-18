@@ -13,7 +13,7 @@ interface NotificationProps{
     close?: ()=>void;
 }
 
-const Notification: React.FC<NotificationProps> = ({ className,type,animation,data,close,position,isTop}) => {
+export const Notification: React.FC<NotificationProps> = ({ className,type,animation,data,close,position,isTop}) => {
   
   return (
     <div className={cn("group fixed min-w-[340px] max-w-sm  md:min-w-sm md:max-w-md w-auto border-[1.5px] h-auto flex flex-row justify-center items-center text-white p-4 rounded-3xl backdrop-blur-3xl hover:cursor-pointer",
@@ -52,5 +52,3 @@ const Notification: React.FC<NotificationProps> = ({ className,type,animation,da
     </div>
   );
 };
-
-export default Notification
