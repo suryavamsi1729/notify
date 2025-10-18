@@ -205,7 +205,7 @@ notify(
 ```
 
 ### 📂 Folder Structure
-
+``` bash
 src/
 ├── components/
 │ └── Notification.tsx # Notification component UI
@@ -216,6 +216,7 @@ src/
 ├── types/
 │ └── notification.ts # TypeScript types for notifications
 └── index.ts # Entry point to export library
+```
 
 
 ### 🛠️ Development
