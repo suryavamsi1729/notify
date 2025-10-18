@@ -96,5 +96,16 @@ export default function ExampleComponent() {
 | `warning`| Caution alert        |
 | `error`  | Error alert          |
 
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr><td>info</td><td>General information</td></tr>
+  <tr><td>success</td><td>Operation successful</td></tr>
+  <tr><td>warning</td><td>Caution alert</td></tr>
+  <tr><td>error</td><td>Error alert</td></tr>
+</table>
+
 
 
