@@ -1,73 +1,100 @@
-# React + TypeScript + Vite
+# 🔔 React Notify — Lightweight Notification System for React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![npm version](https://img.shields.io/npm/v/@suryavamsi1729/notify.svg?color=brightgreen)](https://www.npmjs.com/package/@suryavamsi1729/notify)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
+[![React](https://img.shields.io/badge/React-%5E17%20|%5E18-blue?logo=react)](https://react.dev)
 
-Currently, two official plugins are available:
+> A simple, customizable, and animated notification (toast) system for React built with TypeScript and Tailwind CSS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✅ Clean, minimal toast design  
+✅ Supports **info, success, warning, and error** types  
+✅ Auto-dismiss after custom duration  
+✅ Supports **slide** and **fade** animations  
+✅ Custom sound support (`notification.mp3`)  
+✅ Lightweight and dependency-free  
+✅ Built with TypeScript  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📦 Installation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Install via npm or yarn:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+```bash
+npm install @suryavamsi1729/notify
+# or
+yarn add @suryavamsi1729/notify
+```
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ⚙️Setup
+
+### Wrap your application with the NotificationProvider at the root level (e.g., in App.tsx or main.tsx):
+
+```bash
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import { NotificationProvider } from "@suryavamsi1729/notify";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <NotificationProvider>
+      <App />
+    </NotificationProvider>
+  </React.StrictMode>
+);
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔔 Usage Example
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Inside any component, use the useNotify() hook:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+import { useNotify } from "@suryavamsi1729/notify";
+
+export default function ExampleComponent() {
+  const { notify } = useNotify();
+
+  const handleClick = () => {
+    notify("success", 
+    {
+      title: "Success!",
+      message: "Your data has been saved successfully."
+    }, 
+    {
+      duration: 4000,
+      position: "topRight",
+      animation: "slide",
+      sound: "on"
+    });
+  };
+
+  return (
+    <button
+      onClick={handleClick}
+      className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+    >
+      Show Notification
+    </button>
+  );
+}
 ```
+
+### 🎨 Customization
+
+#### Notification Types
+
+| Type     | Description           |
+|----------|---------------------|
+| `info`   | General information  |
+| `success`| Operation successful |
+| `warning`| Caution alert        |
+| `error`  | Error alert          |
+
+
+
