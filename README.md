@@ -89,12 +89,15 @@ export default function ExampleComponent() {
 
 #### Notification Types
 
-| Type     | Description           |
-|----------|---------------------|
-| `info`   | General information  |
-| `success`| Operation successful |
-| `warning`| Caution alert        |
-| `error`  | Error alert          |
+  Type      Description           
+ ---------------------------------
+ `info`     General information  
+ ---------------------------------
+ `success`  Operation successful 
+ ---------------------------------
+ `warning`  Caution alert        
+ ---------------------------------
+ `error`    Error alert          
 
 <table>
   <tr>
