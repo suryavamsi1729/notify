@@ -35,7 +35,7 @@ yarn add @suryavamsi1729/notify
 
 ### Wrap your application with the NotificationProvider at the root level (e.g., in App.tsx or main.tsx):
 
-```bash
+```tsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
@@ -54,7 +54,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 ### Inside any component, use the useNotify() hook:
 
-```bash
+```tsx
 import { useNotify } from "@suryavamsi1729/notify";
 
 export default function ExampleComponent() {
@@ -87,20 +87,17 @@ export default function ExampleComponent() {
 
 ### 🎨 Customization
 
-#### Notification Types  
+#### Notification Types
 
 <table style="border-collapse: collapse; width: 100%;">
-  <!-- Header -->
   <thead>
-    <tr style="border-bottom: 3px solid #000;"> <!-- thick line under header -->
+    <tr style="border-bottom: 3px solid #000;">
       <th style="text-align: left; padding: 8px;">Type</th>
       <th style="text-align: left; padding: 8px;">Description</th>
     </tr>
   </thead>
-
-  <!-- Body -->
   <tbody>
-    <tr style="border-bottom: 1px solid #ccc;"> <!-- thin line -->
+    <tr style="border-bottom: 1px solid #ccc;">
       <td style="padding: 8px;">info</td>
       <td style="padding: 8px;">General information</td>
     </tr>
@@ -119,8 +116,10 @@ export default function ExampleComponent() {
   </tbody>
 </table>
 
+---
 
 #### Position Options
+
 <table style="border-collapse: collapse; width: 100%;">
   <thead>
     <tr style="border-bottom: 3px solid #000;">
@@ -140,7 +139,10 @@ export default function ExampleComponent() {
   </tbody>
 </table>
 
+---
+
 #### Animation Options
+
 <table style="border-collapse: collapse; width: 100%;">
   <thead>
     <tr style="border-bottom: 3px solid #000;">
@@ -160,7 +162,10 @@ export default function ExampleComponent() {
   </tbody>
 </table>
 
-#### Sound
+---
+
+#### Sound Options
+
 <table style="border-collapse: collapse; width: 100%;">
   <thead>
     <tr style="border-bottom: 3px solid #000;">
@@ -180,6 +185,62 @@ export default function ExampleComponent() {
   </tbody>
 </table>
 
-##### 🔔 You can add your custom sound file under `/public/sounds/notification.mp3`.
+🔔 You can add your custom sound file under `/public/sounds/notification.mp3`.
+
+---
+
+#### Duration
+
+Set how long the notification should appear (in milliseconds). Default is **3000ms (3s)**.
+
+```tsx
+notify(
+  "info", 
+  { 
+    title: "Heads up", 
+    message: "This will disappear in 6s" 
+  }, 
+  { duration: 6000 }
+);
+```
+
+### 📂 Folder Structure
+
+src/
+├── components/
+│ └── Notification.tsx # Notification component UI
+├── context/
+│ └── NotificationProvider.tsx # Provider for notifications
+├── hooks/
+│ └── useNotify.tsx # Custom hook to trigger notifications
+├── types/
+│ └── notification.ts # TypeScript types for notifications
+└── index.ts # Entry point to export library
 
 
+### 🛠️ Development
+
+To build the package for npm:
+
+```bash
+npm run build
+npm publish --access public
+```
+
+### 🧠 Tech Stack
+
+- ⚛️ React + TypeScript  
+- 🎨 Tailwind CSS  
+- 💅 class-variance-authority (CVA)  
+- 🧩 Lucide Icons
+
+
+### 🧑‍💻 Contributing
+
+Contributions are welcome!  
+
+1. Fork the repository  
+2. Create your feature branch (`git checkout -b feature/new-feature`)  
+3. Commit your changes (`git commit -m "Add new feature"`)  
+4. Push to your branch (`git push origin feature/new-feature`)  
+5. Open a Pull Request 🎉
