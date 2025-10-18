@@ -120,4 +120,66 @@ export default function ExampleComponent() {
 </table>
 
 
+#### Position Options
+<table style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="border-bottom: 3px solid #000;">
+      <th style="text-align: left; padding: 8px;">Value</th>
+      <th style="text-align: left; padding: 8px;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 8px;">topRight</td>
+      <td style="padding: 8px;">Appears at top-right corner (default)</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">bottomRight</td>
+      <td style="padding: 8px;">Appears at bottom-right corner</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Animation Options
+<table style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="border-bottom: 3px solid #000;">
+      <th style="text-align: left; padding: 8px;">Value</th>
+      <th style="text-align: left; padding: 8px;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 8px;">slide</td>
+      <td style="padding: 8px;">Slides in from the right</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">fade</td>
+      <td style="padding: 8px;">Fades in/out</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Sound
+<table style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr style="border-bottom: 3px solid #000;">
+      <th style="text-align: left; padding: 8px;">Value</th>
+      <th style="text-align: left; padding: 8px;">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 8px;">on</td>
+      <td style="padding: 8px;">Plays notification sound</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">off</td>
+      <td style="padding: 8px;">Silent notification</td>
+    </tr>
+  </tbody>
+</table>
+
+##### 🔔 You can add your custom sound file under `/public/sounds/notification.mp3`.
+
 
