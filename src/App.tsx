@@ -3,21 +3,40 @@ import { useNotify } from "./hooks/useNotify"
 function App() {
   const notify = useNotify();
   const handleInfo = () => {
-    notify("info", { title: "Information!", description: "This is an info notification." });
+    notify("info",
+      { 
+        title: "Information!", 
+        message: "This is an info notification." 
+      });
   };
   const handleSuccess = () => {
-    notify("success", { title: "Operation completed successfully! Operation completed successfully!Operation completed successfully!Operation completed successfully!Operation completed successfully!Operation completed successfully!", description: "Operation completed successfully!" });
+    notify("success", 
+      { 
+        title: "Operation completed successfully!", 
+        message: "You can now design any notification component you want with it — Toasts, Snackbars, or Animations — all using this same logic.",
+        action:<button type="button" className="w-auto h-auto p-2 border-[1.5px] border-green-500 text-base/[16px] text-green-500 rounded-lg cursor-pointer">action</button>
+      },
+      {position:"topLeft"}
+    );
   };
   const handleWarning = () => {
-    notify("warning", { title: "Warning!", description: "Be careful!" },{position:"bottomRight"});
+    notify("warning", 
+      { 
+        title: "Warning!",
+        message: "You can now design any notification component you want with it — Toasts, Snackbars, or Animations — all using this same logic.",
+      },
+      {position:"topCenter"});
   };
   const handleError = () => {
-    notify("error",{title:"Error!"},{position:"bottomRight",sound:"on"});
+    notify("error",
+      {
+        title:"Error!",
+        message: "You can now design any notification component you want with it — Toasts, Snackbars, or Animations — all using this same logic.",
+      },{position:"bottomLeft",sound:"on"});
   };
   return (
   
     <>
-    
       <div  className="w-full h-screen flex flex-col justify-center items-center ">
         <div className="flex gap-4 p-6">
           <button onClick={handleInfo} className="bg-blue-500 text-white px-4 py-2 rounded">Info</button>

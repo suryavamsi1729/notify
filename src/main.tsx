@@ -6,8 +6,15 @@ import {NotificationProvider} from './context/NotificationProvider.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <NotificationProvider>
-    <App />
+    <NotificationProvider 
+      position='topCenter'
+      audio ={{
+        enabled:true,
+        src:"/sounds/customsound.mp3"
+      }}
+      animation='slide'
+    >
+      <App />
     </NotificationProvider>
   </StrictMode>,
 )
