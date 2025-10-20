@@ -13,7 +13,7 @@
 ✅ Clean, minimal toast design  
 ✅ Supports **info, success, warning, and error** types  
 ✅ Auto-dismiss after custom duration  
-✅ Supports **slide** and **fade** animations  
+✅ Supports **slide** animations  
 ✅ Custom sound support (`notification.mp3`)  
 ✅ Lightweight and dependency-free  
 ✅ Built with TypeScript  
@@ -25,9 +25,8 @@
 Install via npm or yarn:
 
 ```bash
-npm install @suryavamsi1729/notify
-# or
-yarn add @suryavamsi1729/notify
+npm install react-echo-toast
+
 ```
 ---
 
@@ -43,22 +42,22 @@ import { NotificationProvider } from "@suryavamsi1729/notify";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <NotificationProvider>
+    <EchoToastProvider>
       <App />
-    </NotificationProvider>
+    </EchoToastProvider>
   </React.StrictMode>
 );
 ```
 
 ## 🔔 Usage Example
 
-### Inside any component, use the useNotify() hook:
+### Inside any component, use the useEchoToast() hook:
 
 ```tsx
-import { useNotify } from "@suryavamsi1729/notify";
+import { useEchoToast } from "react-echo-toast";
 
 export default function ExampleComponent() {
-  const { notify } = useNotify();
+  const { notify } = useEchoToast();
 
   const handleClick = () => {
     notify("success", 
@@ -93,7 +92,7 @@ export default function ExampleComponent() {
   <thead>
     <tr style="border-bottom: 3px solid #000;">
       <th style="text-align: left; padding: 8px;">Type</th>
-      <th style="text-align: left; padding: 8px;">Description</th>
+      <th style="text-align: left; padding: 8px;">message</th>
     </tr>
   </thead>
   <tbody>
@@ -132,9 +131,25 @@ export default function ExampleComponent() {
       <td style="padding: 8px;">topRight</td>
       <td style="padding: 8px;">Appears at top-right corner (default)</td>
     </tr>
+    <tr style="border-bottom: 1px solid #ccc;">
+      <td style="padding: 8px;">topLeft</td>
+      <td style="padding: 8px;">Appears at top-left corner (default)</td>
+    </tr>
     <tr>
+      <td style="padding: 8px;">topCenter</td>
+      <td style="padding: 8px;">Appears at top-center corner</td>
+    </tr>
+    <tr style="border-bottom: 1px solid #ccc;">
       <td style="padding: 8px;">bottomRight</td>
-      <td style="padding: 8px;">Appears at bottom-right corner</td>
+      <td style="padding: 8px;">Appears at bottom-right corner (default)</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">bottomLeft</td>
+      <td style="padding: 8px;">Appears at bottom-left corner</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px;">bottomCenter</td>
+      <td style="padding: 8px;">Appears at bottom-center corner</td>
     </tr>
   </tbody>
 </table>
@@ -155,10 +170,6 @@ export default function ExampleComponent() {
       <td style="padding: 8px;">slide</td>
       <td style="padding: 8px;">Slides in from the right</td>
     </tr>
-    <tr>
-      <td style="padding: 8px;">fade</td>
-      <td style="padding: 8px;">Fades in/out</td>
-    </tr>
   </tbody>
 </table>
 
@@ -175,12 +186,12 @@ export default function ExampleComponent() {
   </thead>
   <tbody>
     <tr style="border-bottom: 1px solid #ccc;">
-      <td style="padding: 8px;">on</td>
-      <td style="padding: 8px;">Plays notification sound</td>
+      <td style="padding: 8px;">enable</td>
+      <td style="padding: 8px;">Plays notification sound(booelan)</td>
     </tr>
     <tr>
-      <td style="padding: 8px;">off</td>
-      <td style="padding: 8px;">Silent notification</td>
+      <td style="padding: 8px;">src</td>
+      <td style="padding: 8px;">path for sound mp3 track put it on public folder</td>
     </tr>
   </tbody>
 </table>
@@ -204,29 +215,6 @@ notify(
 );
 ```
 
-### 📂 Folder Structure
-``` bash
-src/
-├── components/
-│ └── Notification.tsx # Notification component UI
-├── context/
-│ └── NotificationProvider.tsx # Provider for notifications
-├── hooks/
-│ └── useNotify.tsx # Custom hook to trigger notifications
-├── types/
-│ └── notification.ts # TypeScript types for notifications
-└── index.ts # Entry point to export library
-```
-
-
-### 🛠️ Development
-
-To build the package for npm:
-
-```bash
-npm run build
-npm publish --access public
-```
 
 ### 🧠 Tech Stack
 
