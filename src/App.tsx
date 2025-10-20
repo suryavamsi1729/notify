@@ -1,7 +1,7 @@
 
-import { useNotify } from "./hooks/useNotify"
+import { useEchoToast } from "./hooks/useEchoToast"
 function App() {
-  const notify = useNotify();
+  const notify = useEchoToast();
   const handleInfo = () => {
     notify("info",
       { 
@@ -32,7 +32,7 @@ function App() {
       {
         title:"Error!",
         message: "You can now design any notification component you want with it — Toasts, Snackbars, or Animations — all using this same logic.",
-      },{position:"bottomLeft",sound:"on"});
+      },{position:"bottomLeft"});
   };
   return (
   

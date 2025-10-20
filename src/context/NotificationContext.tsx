@@ -1,11 +1,11 @@
 import { createContext } from "react";
-import type { NotificationType, NotificationData, Position, Animation,Sound } from "../types";
+import type { NotificationType, NotificationData, Position, Animation,Audio } from "../types";
 
 interface NotificationContextType {
-  notify: (
+  echoToast: (
     type: NotificationType,
     data: NotificationData,
-    options?: { position?: Position; animation?: Animation; duration?: number; sound?:Sound }
+    options?: { position?: Position; animation?: Animation; duration?: number; audio?:Audio }
   ) => void;
 }
 

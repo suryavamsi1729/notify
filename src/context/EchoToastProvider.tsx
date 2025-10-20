@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, type FC, type ReactNode } from "react";
+import { type ReactNode, useCallback, useEffect, useMemo, useState, type FC,} from "react";
 import {Notification} from "../components/Notification";
 import type { NotificationData, NotificationProps, NotificationType,Animation, Audio, Position } from "../types";
 import NotificationContext from "./NotificationContext";
@@ -7,7 +7,7 @@ import { cn } from "../lib/utils";
 import clsx from "clsx";
 
 interface NotificationProviderProps {
-    children:ReactNode;
+    children: ReactNode; 
     position: Position;
     animation: Animation;
     audio: Audio;
@@ -20,12 +20,12 @@ const DEFAULT_OPTIONS = {
   duration: 2000,
 };
 
-export const NotificationProvider:FC<NotificationProviderProps> = ({children,position="topRight",audio,animation="slide"}) => {
+export const EchoToastProvider:FC<NotificationProviderProps> = ({children,position="topRight",audio,animation="slide"}) => {
   const [notifications, setNotifications] = useState<NotificationItem[] >([]);
   const len = notifications.length;
   const YDirection = position.includes("top")?"top":"bottom";
   const XDirection = position.includes("Left")?"left":position.includes("Right")?"right":"center";
-  const notify = useCallback((
+  const echoToast = useCallback((
     type:NotificationType, 
     data:NotificationData,
     options: Partial<typeof DEFAULT_OPTIONS> = {}
@@ -56,7 +56,7 @@ export const NotificationProvider:FC<NotificationProviderProps> = ({children,pos
     setTimeout(close, duration);
   },[audio]);
 
-  const contextValue = useMemo(() => ({ notify }), [notify]);
+  const contextValue = useMemo(() => ({ echoToast }), [echoToast]);
 
   useEffect(() => {
     return () => setNotifications([]);
@@ -112,7 +112,6 @@ export const NotificationProvider:FC<NotificationProviderProps> = ({children,pos
             </div>
           </div>
       </div>
-        
     </NotificationContext.Provider>
   );
 };
