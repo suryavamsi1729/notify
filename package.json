@@ -1,7 +1,7 @@
 {
   "name": "react-echo-toast",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "description": "A customizable React notification library for alerts, info, warnings, and success messages — with optional notification audio support. Enable or disable sound, choose custom audio tracks, and create elegant toasts effortlessly.",
   "exports": {
