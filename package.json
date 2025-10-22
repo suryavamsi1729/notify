@@ -3,6 +3,7 @@
   "private": false,
   "version": "1.1.0",
   "type": "module",
+  "description": "A customizable React notification library for alerts, info, warnings, and success messages — with optional notification audio support. Enable or disable sound, choose custom audio tracks, and create elegant toasts effortlessly.",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
@@ -51,5 +52,30 @@
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7"
-  }
+  },
+  "keywords": [
+    "react",
+    "react-toast",
+    "react notifications",
+    "react alert",
+    "toast notification",
+    "react-echo-toast",
+    "notification system",
+    "custom toast",
+    "react warning alert",
+    "success message",
+    "react audio notification",
+    "notification sound",
+    "customizable notifications",
+    "react ui component",
+    "react library",
+    "react popup message",
+    "react toast with sound"
+  ],
+  "homepage": "https://www.npmjs.com/package/react-echo-toast",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suryavamsi1729/react-echo-toast.git"
+  },
+  "author": "https://suryavamsi.vercel.app/"
 }
